@@ -17,6 +17,7 @@ use App\Models\Post;
 */
 
 ///category routes
+// Route::get('practice', [PostController::class, 'practice'])->name('practice');
 Route::get('/', [CategoryController::class, 'index'])->name('categoryindex');
 Route::Post('categorystore', [CategoryController::class, 'store'])->name('categorystore');
 

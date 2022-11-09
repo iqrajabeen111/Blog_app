@@ -81,4 +81,34 @@ class PostController extends Controller
         $post->categories()->sync($request->categories);
         return redirect()->route('index')->with('success', 'Post updated.');
     }
+    //////practice////
+    public function practice()
+    {
+        //ye srf wo post return krega jiski categry hogi category nai return krega bx
+        // $check =  $this->postModel->whereHas('categories', function ($query) {
+        //     $query->where('categories.id', 1);
+        // })->get();
+
+        //post jinki category id iss sy neechy hon jest retun post name s not category
+        // $check =$this->postModel->has('categories', '<', 5)->get();
+
+        //ye post k sth catgry return krega agr relation hai tb bi na ho tb i phr jiska relation 
+        //hoga uski category ayegi bakio ki srf post ayegi
+        // $check =$this->postModel->with('categories')->get();
+
+        //ye post return krega sb or related categories bi jitni br hongi ids utni br categories 
+        //return krega bhale same id do br ho do br same category return krega
+        // $check = $this->postModel->with('categories:title')->get();
+
+        //ye sb post return krega agr category na bi ho tb bi category nai retun krta post k sthh
+        //agr category hogi post ki tw uska count dikhayega
+        // $check = $this->postModel->withCount('categories')->orderBy('categories_count', 'desc')->get();
+        // $check = $this->postModel->orderby('id','asc')->latest()->get();
+        // echo "<pre>";
+        // dd($check);
+        // echo "</pre>";
+        // die();
+        // return view('List', ['posts' => $post]);
+    }
+
 }

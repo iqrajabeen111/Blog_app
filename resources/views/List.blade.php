@@ -22,11 +22,14 @@
         <td>{{ $post->id }}</td>
           <td>{{ $post->title }}</td>
           <td>
+
+          {{$post->categories->implode('title', ', ')}}
             
-          @foreach($post->categories as $category)  
-          {{$category->title }}
+          {{--@foreach($post->categories as $category)  
+          <!-- {{$category->title }} -->
          
-        @endforeach
+          $collection = Str::of($category->title)->explode(' ')
+        @endforeach--}}
         </td>
         
         <td>
